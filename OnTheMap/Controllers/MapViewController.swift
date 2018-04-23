@@ -15,9 +15,7 @@ class MapViewController:UIViewController, MKMapViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.getStudentList()
-        
     }
     
     func getStudentList(){
@@ -46,13 +44,10 @@ class MapViewController:UIViewController, MKMapViewDelegate{
             annotation.subtitle = student.mediaURL
             annotations.append(annotation)
         }
-        
         return annotations
-        
     }
     
     private func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        
         let reuseId = "pin"
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         if pinView == nil {
@@ -85,5 +80,4 @@ class MapViewController:UIViewController, MKMapViewDelegate{
             }
         }
     }
-    
 }

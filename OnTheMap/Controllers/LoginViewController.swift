@@ -81,10 +81,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func SignUpPressed(_ sender: Any) {
-        //UIApplication.shared.open(URL(string: Constants.ConstantsUdacity.SignUpUrl)!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string: Constants.ConstantsUdacity.SignUpUrl)!, options: [:], completionHandler: nil)
     }
     private func loginSuccessful() {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        let controller = storyboard!.instantiateViewController(withIdentifier: "NavigationController") as! TabBarController
         present(controller, animated: true, completion: nil)
     }
 
