@@ -81,13 +81,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func SignUpPressed(_ sender: Any) {
-        UIApplication.shared.open(URL(string: Constants.ConstantsUdacity.SignUpUrl)!, options: [:], completionHandler: nil)
+        //UIApplication.shared.open(URL(string: Constants.ConstantsUdacity.SignUpUrl)!, options: [:], completionHandler: nil)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     private func loginSuccessful() {
         let controller = storyboard!.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         present(controller, animated: true, completion: nil)
