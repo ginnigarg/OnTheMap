@@ -120,9 +120,7 @@ class Networking{
         request.addValue(Constants.ConstantsParse.ApiKey, forHTTPHeaderField: "X-Parse-REST-API-Key")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = "{\"uniqueKey\": \"\(User.sharedInstance.uniqueKey!)\",\"firstName\": \"\(User.sharedInstance.firstName!)\",\"lastName\": \"\(User.sharedInstance.lastName!)\",\"mapString\": \"\(mapString)\", \"mediaURL\": \"\(mediaUrl)\",\"latitude\": \(pointAnnotation.coordinate.latitude), \"longitude\": \(pointAnnotation.coordinate.longitude)}".data(using: String.Encoding.utf8)
-        
         let session = URLSession.shared
-        
         let task = session.dataTask(with: request as URLRequest) { data, response, error in
             guard (error == nil) else{
                 completionHandlerForPostLocation(false, error as NSError?)
@@ -148,7 +146,5 @@ class Networking{
             completionHandlerForPostLocation(true, nil)
         }
         task.resume()
-        
     }
-    
 }
